@@ -1,9 +1,13 @@
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'student.dart';
 
 void main() {
-  runApp(const MaterialApp(home: MyApp()));
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -28,13 +32,16 @@ class _MyAppState extends State<MyApp> {
     final result = Employee.fromJson(jsonDecode(json));
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Employee Record Manager')),
+      appBar: AppBar(
+        title: const Text('Employee Record Manager'),
+      ),
       body: Column(
         children: [
           Text('ID: ${employee.id}'),
           Text('Name: ${employee.name}'),
           Text('Department: ${employee.department}'),
           Text('JSON: $json'),
+
           ElevatedButton(
             onPressed: () {
               setState(() {
@@ -43,11 +50,14 @@ class _MyAppState extends State<MyApp> {
             },
             child: const Text('Add Employee'),
           ),
+
           Expanded(
             child: ListView.builder(
               itemCount: employees.length,
               itemBuilder: (context, index) {
-                return ListTile(title: Text(employees[index]));
+                return ListTile(
+                  title: Text(employees[index]),
+                );
               },
             ),
           ),
