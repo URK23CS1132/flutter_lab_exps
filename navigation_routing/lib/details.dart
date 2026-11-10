@@ -6,12 +6,9 @@ class DetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Details')),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () => Navigator.pop(context),
-          child: const Text('Go Back'),
-        ),
+      appBar: AppBar(title: const Text('Details Page')),
+      body: const Center(
+        child: Text('Welcome to Details Page'),
       ),
     );
   }
