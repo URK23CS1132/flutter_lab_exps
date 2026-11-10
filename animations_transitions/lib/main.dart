@@ -1,7 +1,11 @@
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(home: MyApp()));
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -17,7 +21,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Traffic Signal Animation')),
+      appBar: AppBar(
+        title: const Text('Traffic Signal Animation'),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -40,6 +46,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
             ),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 setState(() {
