@@ -1,7 +1,11 @@
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(home: MyApp()));
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -10,7 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Patient Dashboard')),
+      appBar: AppBar(
+        title: const Text('Patient Dashboard'),
+      ),
       body: ListView(
         children: [
           const Column(
@@ -19,6 +25,7 @@ class MyApp extends StatelessWidget {
               Text('Welcome to Hospital Dashboard'),
             ],
           ),
+
           Container(
             margin: const EdgeInsets.all(10),
             padding: const EdgeInsets.all(20),
@@ -34,6 +41,7 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
+
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -42,6 +50,7 @@ class MyApp extends StatelessWidget {
               Icon(Icons.local_hospital),
             ],
           ),
+
           const Card(
             child: ListTile(
               leading: Icon(Icons.person),
@@ -49,6 +58,7 @@ class MyApp extends StatelessWidget {
               subtitle: Text('Dr. Kumar'),
             ),
           ),
+
           const Card(
             child: ListTile(
               leading: Icon(Icons.meeting_room),
@@ -56,6 +66,7 @@ class MyApp extends StatelessWidget {
               subtitle: Text('205'),
             ),
           ),
+
           const ListTile(title: Text('Flutter')),
           const ListTile(title: Text('Cloud Computing')),
           const ListTile(title: Text('Programming')),
