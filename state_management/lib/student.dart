@@ -1,3 +1,4 @@
+
 class Employee {
   final int id;
   final String name;
@@ -9,11 +10,13 @@ class Employee {
     required this.department,
   });
 
-  Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-    'department': department,
-  };
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'department': department,
+    };
+  }
 
   factory Employee.fromJson(Map<String, dynamic> json) {
     return Employee(
